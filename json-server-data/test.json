@@ -1,0 +1,104 @@
+{
+  "allProducts": [
+    {
+      "id": 1,
+      "category_name": "Electronics",
+      "product_name": "MI HD TV",
+      "product_des": "Resolution: HD Ready Android TV (1366x768) | Refresh Rate: 60 hertz Connectivity: 3 HDMI ports to connect set top box",
+      "product_price": "2300",
+      "product_quantity": "11",
+      "product_rating": "2",
+      "product_img": "https://images-na.ssl-images-amazon.com/images/I/81kQE0OhMlL._SL1500_.jpg"
+    },
+    {
+      "category_name": "Electronics",
+      "product_name": "OnePlus QLED TV",
+      "product_des": "Resolution: HD Ready Android TV (1366x768) | Refresh Rate: 60 hertz Connectivity: 3 HDMI ports to connect set top box",
+      "product_price": "230",
+      "product_quantity": "9",
+      "product_rating": "3",
+      "product_img": "https://images-na.ssl-images-amazon.com/images/I/71EO3uGdJbL._SL1500_.jpg",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "category_name": "Electronics",
+      "product_name": "Micromax UHD LED",
+      "product_des": "Resolution: HD Ready Android TV (1366x768) | Refresh Rate: 60 hertz Connectivity: 3 HDMI ports to connect set top box",
+      "product_price": "120",
+      "product_quantity": "4",
+      "product_rating": "2",
+      "product_img": "https://images-na.ssl-images-amazon.com/images/I/81kQE0OhMlL._SL1500_.jpg"
+    },
+    {
+      "id": 4,
+      "category_name": "Electronics",
+      "product_name": "Smart Watch",
+      "product_price": "140",
+      "product_quantity": "1",
+      "product_rating": "4",
+      "product_des": "Multifunction Smart Watch & IP68 Waterproof, Muzili smart watch offers the functions of heart rate, sleep monitor, calories calculation",
+      "product_img": "https://images-na.ssl-images-amazon.com/images/I/512HUgKWDiL._SL1000_.jpg"
+    },
+    {
+      "id": 5,
+      "category_name": "Electronics",
+      "product_name": "Samsung Galaxy Watch",
+      "product_price": "250",
+      "product_quantity": "2",
+      "product_rating": "5",
+      "product_des": "Multifunction Smart Watch & IP68 Waterproof, Muzili smart watch offers the functions of heart rate, sleep monitor, calories calculation",
+      "product_img": "https://images-na.ssl-images-amazon.com/images/I/61ErvNimpvL._SL1500_.jpg"
+    },
+    {
+      "id": 6,
+      "category_name": "Accessories",
+      "product_name": "Fostelo Catlin HandBag",
+      "product_price": "150",
+      "product_quantity": "4",
+      "product_rating": "2",
+      "product_des": "Warranty - 1 Year Warranty On Manufacturing Defects.Quality Assured.  3 Zip Compartments And 1 Back Zip Pocket ",
+      "product_img": "https://images-na.ssl-images-amazon.com/images/I/71fZ4nCbKvL._UL1500_.jpg"
+    },
+    {
+      "id": 7,
+      "category_name": "Accessories",
+      "product_name": "Typify Leather Bag",
+      "product_price": "165",
+      "product_quantity": "3",
+      "product_rating": "4",
+      "product_des": "Warranty - 1 Year Warranty On Manufacturing Defects.Quality Assured.  3 Zip Compartments And 1 Back Zip Pocket ",
+      "product_img": "https://images-na.ssl-images-amazon.com/images/I/71fZ4nCbKvL._UL1500_.jpg"
+    },
+    {
+      "id": 8,
+      "category_name": "Electronics",
+      "product_name": "OnePlus Pro",
+      "product_price": "125",
+      "product_quantity": "5",
+      "product_rating": "5",
+      "product_des": "Rear Camera; 48MP (Primary)+ 8MP (Tele-photo)+16MP (ultrawide); Front Camera;16 MP POP-UP Camera; 16.9 centimeters (6.67-inch) multi-touch capacitive touchscreen",
+      "product_img": "https://images-na.ssl-images-amazon.com/images/I/51FwsSj8knL._SL1000_.jpg"
+    },
+    {
+      "id": 9,
+      "category_name": "Electronics",
+      "product_name": "Apple Iphone XR",
+      "product_price": "220",
+      "product_quantity": "1",
+      "product_rating": "4",
+      "product_des": "Rear Camera; 48MP (Primary)+ 8MP (Tele-photo)+16MP (ultrawide); Front Camera;16 MP POP-UP Camera; 16.9 centimeters (6.67-inch) multi-touch capacitive touchscreen",
+      "product_img": "https://images-na.ssl-images-amazon.com/images/I/519KIlHA2wL._SL1024_.jpg"
+    },
+    {
+      "id": 10,
+      "category_name": "Electronics",
+      "product_name": "Samsung Galaxy S",
+      "product_price": "230",
+      "product_quantity": "3",
+      "product_rating": "2",
+      "product_des": "Rear Camera; 48MP (Primary)+ 8MP (Tele-photo)+16MP (ultrawide); Front Camera;16 MP POP-UP Camera; 16.9 centimeters (6.67-inch) multi-touch capacitive touchscreen",
+      "product_img": "https://images-na.ssl-images-amazon.com/images/I/81LevhQnGmL._SL1500_.jpg"
+    }
+  ]
+}
