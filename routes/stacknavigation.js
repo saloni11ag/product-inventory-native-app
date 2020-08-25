@@ -42,7 +42,7 @@ function StackNavigator() {
                 screenOptions={{
                     gestureEnabled: true,
                     headerStyle: {
-                        backgroundColor: 'lightgrey',
+                        backgroundColor: 'wheat',
                         height: 100
                     }
                 }}

@@ -1,16 +1,6 @@
 {
   "allProducts": [
     {
-      "id": 1,
-      "category_name": "Electronics",
-      "product_name": "MI HD TV",
-      "product_des": "Resolution: HD Ready Android TV (1366x768) | Refresh Rate: 60 hertz Connectivity: 3 HDMI ports to connect set top box",
-      "product_price": "2300",
-      "product_quantity": "11",
-      "product_rating": "2",
-      "product_img": "https://images-na.ssl-images-amazon.com/images/I/81kQE0OhMlL._SL1500_.jpg"
-    },
-    {
       "category_name": "Electronics",
       "product_name": "OnePlus QLED TV",
       "product_des": "Resolution: HD Ready Android TV (1366x768) | Refresh Rate: 60 hertz Connectivity: 3 HDMI ports to connect set top box",

@@ -4,9 +4,9 @@ import { globalStyles } from '../styles/global';
 import Card from './card';
 // import { ListItem, Button, Icon } from 'react-native-elements'
 import { MaterialIcons } from '@expo/vector-icons';
-import FlatButton from './button'
 import EditForm from './editForm';
 import axios from 'axios';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export default function ReviewDetails(props) {
 
@@ -27,6 +27,7 @@ export default function ReviewDetails(props) {
 
     return (
         <View style={globalStyles.container}>
+        <ScrollView>
             <Card>
                 <Image
                     style={styles.tinyLogo}
@@ -45,6 +46,7 @@ export default function ReviewDetails(props) {
                 <Text>{' '}</Text>
                 <Button color= 'red' onPress={handleDelete} title='Delete' />
             </Card>
+            </ScrollView>
         </View>
     );
 }
