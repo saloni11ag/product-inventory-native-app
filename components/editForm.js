@@ -8,7 +8,7 @@ import axios from 'axios';
 export default function EditProduct(props) {
 
     // console.log(props);
-    const detail = props.route.params
+    const detail = props.route.params.prod
     const [productName, setProductName] = useState('')
     const [categoryName, setCategoryName] = useState('')
     const [productDes,setProductDes] = useState('')
@@ -39,6 +39,7 @@ export default function EditProduct(props) {
         .then(
             response => {
                 // console.log(response);
+                props.route.params.getProduct()
                 props.navigation.goBack();
             }, error => {
                 console.error(error);

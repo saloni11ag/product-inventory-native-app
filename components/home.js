@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { View, Image, Text, StyleSheet, ScrollView, TouchableOpacity, FlatList,TextInput, Button } from 'react-native'
+import { View, Image, Text, StyleSheet, ScrollView, TouchableOpacity, FlatList, TextInput, Button, Picker } from 'react-native'
 // import { ListItem, Button, Icon } from 'react-native-elements'
 import { globalStyles } from '../styles/global';
 import Card from './card';
@@ -20,6 +20,11 @@ const styles = StyleSheet.create({
     },
     name: {
         fontSize: 25
+    },
+    dropdown: {
+        flex: 1,
+        paddingTop: 40,
+        alignItems: "center"
     }
 });
 
@@ -27,6 +32,7 @@ function Home({ navigation }) {
 
     const [allProducts, setAllProduct] = useState([])
     const [searchvalue, setSearchvalue] = useState([])
+    const [selectedValue, setSelectedValue] = useState("Electronics");
 
     const getAllProducts = () => {
         axios.get('http://localhost:3000/allProducts')
@@ -45,21 +51,25 @@ function Home({ navigation }) {
     }
 
     const handleChange = (val) => {
-        // console.log(val);
-        // let name = event.target.name;
-        // let val = event.target.value;
-
         if (val === '') {
             setAllProduct(searchvalue)
         }
-
-        // this.setState({ [name]: val });
         let filteredProducts = searchvalue.filter(prod => {
             return prod.product_name.toLowerCase().match(val.toLowerCase())
         })
-        // // console.log("searched product"+filteredProducts);
-        // this.setState({ productList: filteredProducts })
         setAllProduct(filteredProducts)
+    }
+
+    const filterChange = (itemValue) => {
+        setSelectedValue(itemValue)
+        if (itemValue === "all") {
+            setAllProduct(searchvalue)
+        } else {
+            let filteredProducts = searchvalue.filter(prod => {
+                return prod.category_name === itemValue
+            })
+            setAllProduct(filteredProducts)
+        }
     }
 
 
@@ -74,10 +84,21 @@ function Home({ navigation }) {
                 style={globalStyles.input}
                 placeholder='Search Products..'
                 onChangeText={(value) => { handleChange(value) }}
-                // value={searchvalue}
+            // value={searchvalue}
             />
+            <View>
+                <Picker
+                    selectedValue={selectedValue}
+                    style={{ height: 50, width: 150 }}
+                    onValueChange={(itemValue, itemIndex) => filterChange(itemValue)}
+                >
+                    <Picker.Item label="All Categories" value="all" />
+                    <Picker.Item label="Electronics" value="Electronics" />
+                    <Picker.Item label="Accessories" value="Accessories" />
+                </Picker>
+            </View>
             <FlatList data={allProducts}
-                keyExtractor={item => item.id}
+                keyExtractor={item => item.id.toString()}
                 renderItem={({ item }) => (
                     <TouchableOpacity onPress={() => navigation.navigate('ProductDetails', { item, renderProducts })} >
                         <Card>

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { StyleSheet, View, Text, Image, Modal, Button } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, View, Text, Image, Modal, Button, Picker } from 'react-native';
 import { globalStyles } from '../styles/global';
 import Card from './card';
 // import { ListItem, Button, Icon } from 'react-native-elements'
@@ -12,40 +12,57 @@ export default function ReviewDetails(props) {
 
     // const [editShow, setEditShow] = useState(false);
     // console.log(props);
+    const [prod, setProd] = useState([])
+
+    useEffect(() => {
+        const detail = props.route.params.item
+        getProduct()
+    }, [])
     const detail = props.route.params.item
 
     const handleDelete = () => {
         axios.delete('http://localhost:3000/allProducts/' + detail.id)
-        .then(response => {
-            // console.log(response)
-            props.route.params.renderProducts()
-            props.navigation.goBack();
-        }, error => {
-            console.error(error)
-        })
+            .then(response => {
+                // console.log(response)
+                props.route.params.renderProducts()
+                props.navigation.goBack();
+            }, error => {
+                console.error(error)
+            })
+    }
+
+    const getProduct = () => {
+        axios.get('http://localhost:3000/allProducts/' + detail.id)
+            .then(response => {
+                setProd(response.data)
+            }, error => {
+                console.error(error)
+            }
+
+            )
     }
 
     return (
         <View style={globalStyles.container}>
-        <ScrollView>
-            <Card>
-                <Image
-                    style={styles.tinyLogo}
-                    resizeMode="cover"
-                    source={detail.product_img}
-                />
-                <Text style={globalStyles.titleText}>
-                    Product Name:  {detail.product_name}
-                </Text>
-                <Text style={styles.text}>Category Name:  {detail.category_name}</Text>
-                <Text style={styles.text}>Description:  {detail.product_des}</Text>
-                <Text style={styles.text}>Product Quantity:  {detail.product_quantity}</Text>
-                <Text style={styles.text}>Product Price:  {detail.product_price}$</Text>
-                <Text style={styles.text}>Product Rating:  {detail.product_rating}</Text>
-                <Button onPress={() => props.navigation.navigate('EditProduct', detail)} title='Edit' />
-                <Text>{' '}</Text>
-                <Button color= 'red' onPress={handleDelete} title='Delete' />
-            </Card>
+            <ScrollView>
+                <Card>
+                    <Image
+                        style={styles.tinyLogo}
+                        resizeMode="cover"
+                        source={prod.product_img}
+                    />
+                    <Text style={globalStyles.titleText}>
+                        Product Name:  {prod.product_name}
+                    </Text>
+                    <Text style={styles.text}>Category Name:  {prod.category_name}</Text>
+                    <Text style={styles.text}>Description:  {prod.product_des}</Text>
+                    <Text style={styles.text}>Product Quantity:  {prod.product_quantity}</Text>
+                    <Text style={styles.text}>Product Price:  {prod.product_price}$</Text>
+                    <Text style={styles.text}>Product Rating:  {prod.product_rating}</Text>
+                    <Button onPress={() => props.navigation.navigate('EditProduct', { prod, getProduct })} title='Edit' />
+                    <Text>{' '}</Text>
+                    <Button color='red' onPress={handleDelete} title='Delete' />
+                </Card>
             </ScrollView>
         </View>
     );
